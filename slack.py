@@ -1,6 +1,12 @@
 import requests
 import json
 
+def getToken():
+    with open('TOKEN.json') as f:
+        token_json = json.load(f)
+        
+    return token_json['token']
+
 def sendMessage(): 
     
     SLACK_TOKEN = 'xoxb-2486712878006-2629452021185-LXQ4mYi8YCpO7VlUCHmZXTYH'
@@ -23,4 +29,6 @@ def sendMessage():
     
     print (res.text)
 
+token = getToken()
+print (token)
 sendMessage()
