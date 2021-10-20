@@ -9,7 +9,7 @@ def getToken():
 
 def send(msg):
     
-    msg['channel'] = '#new-song'
+    msg['channel'] = 'U02EED66CE9'
     TOKEN = getToken()
     
     headers = {

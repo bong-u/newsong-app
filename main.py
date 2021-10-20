@@ -1,5 +1,5 @@
 from sendMessage import send
-from getFromAPI import getAlbum
+from getFromAPI import getAlbums
 
 if __name__ == '__main__':
     artists = [
@@ -10,7 +10,7 @@ if __name__ == '__main__':
     ]
     
     for artist in artists:
-        result = getAlbum(artist)
+        result = getAlbums(artist)
     
         msg = {
             'channel': '',
@@ -20,12 +20,13 @@ if __name__ == '__main__':
                     'color': '#3f3fff',
                     'author_name': result['artist'],
                     'title': result['title'],
-                    'text': result['releaseYmd'],
                     'thumb_url': result['img'],
+                    "fields": result['tracks'],
                     'footer': 'FLO',
                     'footer_icon': 'https://www.music-flo.com/favicon.ico'
                 }
             ]
         }
+        
 
         send(msg)

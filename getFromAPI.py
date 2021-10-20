@@ -10,7 +10,7 @@ params = {
     'page' : '1'
 }
 
-def getAlbum(artist):
+def getAlbums(artist):
     
     result = {}
     
@@ -24,6 +24,7 @@ def getAlbum(artist):
             result['title'] = item['title']
             result['releaseYmd'] = item['releaseYmd']
             result['img'] = item['imgList'][5]['url']
+            result['tracks'] = getTracks(str(item['id']))
             break;
 
 
@@ -31,3 +32,17 @@ def getAlbum(artist):
             break;
     
     return result
+
+def getTracks(album):
+    
+    result = []
+    
+    res = requests.get (BASE_URL + '/album/' + album + '/track')
+    
+    tracks = json.loads(res.text)
+    
+    for n, item in enumerate(tracks['data']['list']):
+        result.append ({'value' : str(n+1) + '. ' + item['name']})
+    
+    return result
+    
