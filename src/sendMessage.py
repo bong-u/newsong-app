@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 JSON_PATH = os.path.abspath('flo-reminder/json')
 
@@ -26,6 +27,7 @@ def send(msg):
     )
     
     # print (res.text)
+    print (datetime.now().strftime('%Y-%m-%d %H:%M:%S'), end=' | ')
     print ('Sending status :', end=' ')
     print (json.loads(res.text)['ok'])
 
