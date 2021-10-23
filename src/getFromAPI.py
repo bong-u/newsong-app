@@ -1,8 +1,9 @@
 import requests
 import json
+import os
 
 BASE_URL = 'https://www.music-flo.com/api/meta/v1'
-JSON_PATH = '../json/'
+JSON_PATH = os.path.abspath('flo-reminder/json')
 
 params = {
     'sortType' : 'RECENT',
@@ -14,14 +15,14 @@ params = {
 def UpdateArtists(recent):
     artists = {}
     
-    with open(JSON_PATH + 'ARTISTS.json', 'r') as f:
+    with open(JSON_PATH + '/ARTISTS.json', 'r') as f:
         artists = json.load(f)
         
     for artist in artists:
         if artist['name'] == recent['name']:
             artist['recent'] = recent['recent']
             
-    with open(JSON_PATH + 'ARTISTS.json', 'w', encoding = 'utf8') as f:
+    with open(JSON_PATH + '/ARTISTS.json', 'w', encoding = 'utf8') as f:
         json.dump(artists, f, indent=4, ensure_ascii=False)
         
     return artists

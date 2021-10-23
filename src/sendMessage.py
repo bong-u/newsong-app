@@ -1,10 +1,11 @@
 import requests
 import json
+import os
 
-JSON_PATH = '../json/'
+JSON_PATH = os.path.abspath('flo-reminder/json')
 
 def getToken():
-    with open(JSON_PATH + 'TOKEN.json', 'r') as f:
+    with open(JSON_PATH + '/TOKEN.json', 'r') as f:
         token_json = json.load(f)
         
     return token_json['token']

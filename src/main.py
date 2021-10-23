@@ -1,18 +1,18 @@
 from sendMessage import send
 from getFromAPI import getAlbums
 import json
+import os
 
-JSON_PATH = '../json/'
+JSON_PATH = os.path.abspath('flo-reminder/json')
 
 def getArtists():
-    with open(JSON_PATH + 'ARTISTS.json', 'r') as f:
+    with open(JSON_PATH + '/ARTISTS.json', 'r') as f:
         artists = json.load(f)
         
     return artists
 
 if __name__ == '__main__':
     artists = getArtists();
-    
     
     for artist in artists:
         results = getAlbums(artist)
