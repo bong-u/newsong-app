@@ -24,8 +24,7 @@ if __name__ == '__main__':
                     {
                         'mrkdwn_in': ['text'],
                         'color': '#3f3fff',
-                        'author_name': result['artist'],
-                        'title': result['title'],
+                        'title': result['artist'] + ' - ' + result['title'],
                         'thumb_url': result['img'],
                         "fields": result['tracks'],
                         'footer': 'FLO',

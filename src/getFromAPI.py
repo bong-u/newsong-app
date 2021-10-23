@@ -34,7 +34,7 @@ def getAlbums(artist):
     res = requests.get (BASE_URL + artist['url'] + '/album', params = params)
 
     albums = json.loads(res.text)
-
+    
     for n, item in enumerate(albums['data']['list']):
         result = {}
         
