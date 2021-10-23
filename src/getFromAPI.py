@@ -72,7 +72,7 @@ def getTracks(album, artistName):
         for artist in item['artistList']:
             artists.append (artist['name'])
         
-        if not artistName in artists:
+        if not (artistName in artists or artistName in item['name']) :
             continue;
         
         value = '{0}. {1} - {2}'.format (str(n+1), item['name'], ', '.join(artists))
