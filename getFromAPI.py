@@ -77,9 +77,6 @@ def getTracks(album, artistName):
         
         value = '{0}. {1} - {2}'.format (str(n+1), item['name'], ', '.join(artists))
         
-        # value = str(n+1) + '. ' + item['name']
-        # value += ' - ' + ', '.join (artists)
-        
         result.append ({'value' : value})
     
     return result
