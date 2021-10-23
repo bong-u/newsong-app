@@ -2,7 +2,7 @@ import requests
 import json
 
 def getToken():
-    with open('TOKEN.json') as f:
+    with open('TOKEN.json', 'r') as f:
         token_json = json.load(f)
         
     return token_json['token']
