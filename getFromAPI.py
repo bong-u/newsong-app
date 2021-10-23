@@ -21,8 +21,8 @@ def UpdateArtists(recent):
         if artist['name'] == recent['name']:
             artist['recent'] = recent['recent']
             
-    with open('ARTISTS.json', 'w') as f:
-        json.dump(artists, f)
+    with open('ARTISTS.json', 'w', encoding = 'utf8') as f:
+        json.dump(artists, f, indent=4, ensure_ascii=False)
         
     return artists
 
