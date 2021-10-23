@@ -2,8 +2,10 @@ from sendMessage import send
 from getFromAPI import getAlbums
 import json
 
+JSON_PATH = '../json/'
+
 def getArtists():
-    with open('ARTISTS.json', 'r') as f:
+    with open(JSON_PATH + 'ARTISTS.json', 'r') as f:
         artists = json.load(f)
         
     return artists

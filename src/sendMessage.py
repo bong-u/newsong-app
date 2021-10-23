@@ -1,8 +1,10 @@
 import requests
 import json
 
+JSON_PATH = '../json/'
+
 def getToken():
-    with open('TOKEN.json', 'r') as f:
+    with open(JSON_PATH + 'TOKEN.json', 'r') as f:
         token_json = json.load(f)
         
     return token_json['token']
