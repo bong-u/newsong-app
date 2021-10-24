@@ -7,7 +7,7 @@ JSON_PATH = os.path.join(os.getcwd(), 'json')
 
 params = {
     'sortType' : 'RECENT',
-    'roleType' : 'ALL',
+    'roleType' : 'RELEASE',
     'page' : '1',
     'size' : '3'
 }
@@ -50,7 +50,7 @@ def getAlbums(artist):
         result['artist'] = artist['name']
         result['title'] = item['title']
         result['releaseYmd'] = item['releaseYmd']
-        result['img'] = item['imgList'][5]['url']
+        result['img'] = item['imgList'][4]['url']
         result['tracks'] = getTracks (str(item['id']), artist['name'])
         
         results.append (result)
@@ -72,9 +72,6 @@ def getTracks(album, artistName):
         
         for artist in item['artistList']:
             artists.append (artist['name'])
-        
-        if not (artistName in artists or artistName in item['name']) :
-            continue;
         
         value = '{0}. {1} - {2}'.format (str(n+1), item['name'], ', '.join(artists))
         
