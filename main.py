@@ -1,9 +1,9 @@
-from sendMessage import send
-from getFromAPI import getAlbums
+from src.sendMessage import send
+from src.getFromAPI import getAlbums
 import json
 import os
 
-JSON_PATH = os.path.abspath('flo-reminder/json')
+JSON_PATH = os.path.join(os.getcwd(), 'json')
 
 def getArtists():
     with open(JSON_PATH + '/ARTISTS.json', 'r') as f:

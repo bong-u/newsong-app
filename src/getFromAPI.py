@@ -3,7 +3,7 @@ import json
 import os
 
 BASE_URL = 'https://www.music-flo.com/api/meta/v1'
-JSON_PATH = os.path.abspath('flo-reminder/json')
+JSON_PATH = os.path.join(os.getcwd(), 'json')
 
 params = {
     'sortType' : 'RECENT',

@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 
-JSON_PATH = os.path.abspath('flo-reminder/json')
+JSON_PATH = os.path.join(os.getcwd(), 'json')
 
 def getToken():
     with open(JSON_PATH + '/TOKEN.json', 'r') as f:
