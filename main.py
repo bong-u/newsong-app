@@ -1,5 +1,6 @@
 from src.sendMessage import send
 from src.getFromAPI import getAlbums
+from src.getDomColor import getColor
 import json
 import os
 
@@ -23,7 +24,7 @@ if __name__ == '__main__':
                 'attachments': [
                     {
                         'mrkdwn_in': ['text'],
-                        'color': '#3f3fff',
+                        'color': getColor (result['img']),
                         'title': result['artist'] + ' - ' + result['title'],
                         'thumb_url': result['img'],
                         "fields": result['tracks'],
@@ -33,5 +34,4 @@ if __name__ == '__main__':
                 ]
             }
             
-            print (result['img'])
             send(msg)
