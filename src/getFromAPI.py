@@ -1,9 +1,9 @@
 import requests
 import json
-import os
+from os.path import abspath
 
 BASE_URL = 'https://www.music-flo.com/api/meta/v1'
-JSON_PATH = os.path.join(os.getcwd(), 'json')
+JSON_PATH = abspath('flo-reminder/json')
 
 params = {
     'sortType' : 'RECENT',
