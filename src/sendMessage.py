@@ -1,12 +1,10 @@
 import requests
 import json
-from os.path import abspath
 from datetime import datetime
-
-JSON_PATH = abspath('flo-reminder/json')
+from src.path import TOKEN_PATH
 
 def getToken():
-    with open(JSON_PATH + '/TOKEN.json', 'r') as f:
+    with open(TOKEN_PATH, 'r') as f:
         token_json = json.load(f)
         
     return token_json['token']
@@ -26,8 +24,12 @@ def send(msg):
         data = json.dumps(msg)
     )
     
-    # print (res.text)
+    status = json.loads(res.text)['ok']
+
     print (datetime.now().strftime('%Y-%m-%d %H:%M:%S'), end=' | ')
     print ('Sending status :', end=' ')
-    print (json.loads(res.text)['ok'])
+    print (status)
+
+    if not status:
+        print (json.loads(res.text))
 

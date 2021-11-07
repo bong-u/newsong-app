@@ -2,12 +2,10 @@ from src.sendMessage import send
 from src.getFromAPI import getAlbums
 from src.getDomColor import getColor
 import json
-from os.path import abspath
-
-JSON_PATH = abspath('flo-reminder/json')
+from src.path import ARTIST_PATH
 
 def getArtists():
-    with open(JSON_PATH + '/ARTISTS.json', 'r') as f:
+    with open(ARTIST_PATH, 'r') as f:
         artists = json.load(f)
         
     return artists
