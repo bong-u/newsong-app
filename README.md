@@ -12,3 +12,6 @@
 
 ### USING
 * python (requests, colorthief, urllib, json)
+
+### Limitation
+* It only brings artist's release tracks not participation tracks.
