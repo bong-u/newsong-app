@@ -1,3 +1,4 @@
-TOKEN.json
+.venv/
+token.json
 __pycache__/
 *.log
