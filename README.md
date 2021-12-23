@@ -4,13 +4,13 @@
 
 ### OUTLINE
 * Sending new album notification using Slack API.
-* Getting album info with FLO api.
+* Getting album info from https://rest-drf.herokuapp.com/api/artist
 
 ### PERIOD
 * Oct 18, 2021 ~
 
 ### USING
-* python (requests, pillow, json, ast, datetime)
+* python (requests, pillow)
 
 ### Limitation
 * It only brings artist's release tracks not participation tracks.
