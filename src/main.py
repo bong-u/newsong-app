@@ -16,6 +16,7 @@ def new_album():
     if res.status_code != 200:
         print ('Failed to get song data form rest-drf')
         sendError(res.text)
+        print (res.text)
 
     return ast.literal_eval(res.text)
     
@@ -34,8 +35,6 @@ def send(msg):
     )
     
     status = json.loads(res.text)['ok']
-    
-    print (datetime.now().strftime('%Y-%m-%d %H:%M:%S'), end=' | ')
 
     if status:
         print ('Sending Success')
@@ -62,7 +61,8 @@ def sendError(content):
     send(msg)
         
 if __name__ == '__main__':
-    
+    print (datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' | project running...')
+
     for album in new_album():
         msg = {
             'channel': 'U02EED66CE9',
