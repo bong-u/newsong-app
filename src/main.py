@@ -37,9 +37,9 @@ def send(msg):
     status = json.loads(res.text)['ok']
 
     if status:
-        print ('Sending Success')
+        print ('Succeeded to send slack message')
     else:
-        print ('Sending Error')
+        print ('Failed to send slack message.')
         print (json.loads(res.text))
         
 
@@ -61,6 +61,7 @@ def sendError(content):
     send(msg)
         
 if __name__ == '__main__':
+    
     print (datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' | project running...')
 
     for album in new_album():
