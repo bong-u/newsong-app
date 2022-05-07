@@ -56,7 +56,7 @@ class App:
     def __get_artists(self):
         res = requests.get('https://rest-newsong.herokuapp.com/item')
 
-        if res.status_code = 200:
+        if res.status_code != 200:
             print ('Failed to get song data form rest-drf')
             self.__sendError(res.text)
             print (res.text)
