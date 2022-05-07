@@ -1,16 +1,13 @@
 # flo-reminder
+* Sending new album notification using Slack API
+* Getting artist info from https://rest-newsong.herokuapp.com/item ([bong-u/rest](https://github.com/bong-u/rest))
 
-![image](https://user-images.githubusercontent.com/68285620/138581586-aee85edc-3557-4005-a647-9d367672167c.png)
+* message example
 
-### OUTLINE
-* Sending new album notification using Slack API.
-* Getting album info from https://rest-drf.herokuapp.com/api/artist
+    ![image](https://user-images.githubusercontent.com/68285620/138581586-aee85edc-3557-4005-a647-9d367672167c.png)
 
-### PERIOD
-* Oct 18, 2021 ~
+### BUILT WITH
+<img src="https://img.shields.io/badge/Python-0277bd?style=flat-square&logo=python&logoColor=white"/></a>
 
-### USING
-* python (requests, pillow)
-
-### Limitation
+### LIMITATION
 * It only brings artist's release tracks not participation tracks.
