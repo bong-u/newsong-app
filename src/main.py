@@ -85,7 +85,6 @@ class App:
                 'tracks' : self.__get_tracks(str(album['id']), artist['name'])
             })
         
-        
         if needUpdate:
             artist['recent'] = albums['data']['list'][0]['id']
             self.__updateList.append(artist)

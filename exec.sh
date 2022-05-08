@@ -1,5 +1,5 @@
-#! /bin/bash    
-cd /home/opc/flo-reminder/
+#! /bin/bash
+cd /home/opc/newsong-app
 source .venv/bin/activate
 cd src/
 
