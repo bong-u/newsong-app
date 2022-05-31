@@ -20,7 +20,7 @@ class App:
         new_albums = []
 
         for artist in artists:
-            new_albums = self.__get_recent_album (artist)
+            new_albums += self.__get_recent_album (artist)
 
         for album in new_albums:
             message = {
@@ -169,6 +169,7 @@ class App:
         }
         
         for item in self.__updateList:
+            print (item['name'] + ' updated')
             res = requests.put('https://rest-newsong.herokuapp.com/item',
                 headers = headers,
                 data = json.dumps (item)
