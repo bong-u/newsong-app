@@ -129,9 +129,9 @@ class App:
         status = json.loads(res.text)['ok']
 
         if status:
-            print ('Succeeded to send slack message')
+            print ('Message sending success.')
         else:
-            print ('Failed to send slack message.')
+            print ('Failed to send message.')
             print (json.loads(res.text))
 
 
