@@ -1,4 +1,4 @@
-# newsong-app
+# newsong-cron
 * Sending new album notification using Slack API
 * Getting artist info from https://rest-newsong.herokuapp.com/item ([bong-u/rest](https://github.com/bong-u/rest))
 
