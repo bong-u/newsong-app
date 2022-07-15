@@ -25,9 +25,9 @@ jobs:
         pip install Pillow requests
         
     - name : run
-      run: |
-        python main.py
       env:
         SLACK_API: ${{ secrets.SLACK_API }}
         API_ID: ${{ secrets.API_ID }} 
         API_PW: ${{ secrets.API_PW }} 
+      run: |
+        python main.py
