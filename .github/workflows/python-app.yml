@@ -3,9 +3,9 @@
 
 name: newsong-cron
 
-on: [push]
-#   schedule:
-#     - cron: "* * * * *"
+on:
+  schedule:
+    - cron: "* * * * *"
 
 jobs:
   build:
