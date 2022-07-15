@@ -160,6 +160,7 @@ class App:
             }
         )
         
+        print (res.text)
         self.__API_TOKEN = json.loads(res.text)['access_token']
         
     def __update_api_db(self):
