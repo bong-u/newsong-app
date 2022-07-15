@@ -7,9 +7,9 @@ import re
 import os
 
 class App:
-    __SLACK_TOKEN = SLACK_TOKEN
-    __API_ID = API_ID 
-    __API_PW = API_PW
+    __SLACK_TOKEN = os.getenv('SLACK_TOKEN')
+    __API_ID = os.getenv('API_ID')
+    __API_PW = os.getenv('API_PW')
     __API_TOKEN = ''
     
     __updateList = []
