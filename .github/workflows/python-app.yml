@@ -23,4 +23,4 @@ jobs:
         pip install Pillow requests
     - name : run
       run: |
-        python src/main.py
+        python main.py
