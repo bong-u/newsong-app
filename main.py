@@ -43,15 +43,6 @@ class App:
         
         self.__login_to_api()
         self.__update_api_db()
-        
-    
-    # def __get_secret(self):
-    #     with open('token.json', 'r') as f:
-    #         data_json = json.load(f)
-
-    #     self.__SLACK_TOKEN = data_json['token']
-    #     self.__ID_API = data_json['id']
-    #     self.__PW_API = data_json['pw']
 
     def __get_artists(self):
         res = requests.get('https://rest-newsong.herokuapp.com/item')
@@ -156,11 +147,10 @@ class App:
         res = requests.post('https://rest-newsong.herokuapp.com/login',
             data = {
                 'username' : self.__API_ID,
-                'password' : self.__API_TOKEN
+                'password' : self.__API_PW
             }
         )
-        
-        print (res.text)
+
         self.__API_TOKEN = json.loads(res.text)['access_token']
         
     def __update_api_db(self):
