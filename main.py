@@ -4,17 +4,17 @@ import ast
 from datetime import datetime
 from color import color_from_image
 import re
+import os
 
 class App:
-    __SLACK_TOKEN = ''
-    __ID_API = ''
-    __PW_API = ''
+    __SLACK_TOKEN = os.environ['SLACK_TOKEN']
+    __API_ID = os.environ['API_ID']
+    __API_PW = os.environ['API_PW']
     __API_TOKEN = ''
     
     __updateList = []
     
     def __init__(self):
-        self.__get_secret()
 
         artists = self.__get_artists()
         new_albums = []
@@ -45,13 +45,13 @@ class App:
         self.__update_api_db()
         
     
-    def __get_secret(self):
-        with open('token.json', 'r') as f:
-            data_json = json.load(f)
+    # def __get_secret(self):
+    #     with open('token.json', 'r') as f:
+    #         data_json = json.load(f)
 
-        self.__SLACK_TOKEN = data_json['token']
-        self.__ID_API = data_json['id']
-        self.__PW_API = data_json['pw']
+    #     self.__SLACK_TOKEN = data_json['token']
+    #     self.__ID_API = data_json['id']
+    #     self.__PW_API = data_json['pw']
 
     def __get_artists(self):
         res = requests.get('https://rest-newsong.herokuapp.com/item')
@@ -155,8 +155,8 @@ class App:
     def __login_to_api(self):
         res = requests.post('https://rest-newsong.herokuapp.com/login',
             data = {
-                'username' : self.__ID_API,
-                'password' : self.__PW_API
+                'username' : self.__API_ID,
+                'password' : self.__API_TOKEN
             }
         )
         
