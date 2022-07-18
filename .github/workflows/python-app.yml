@@ -26,7 +26,7 @@ jobs:
         
     - name : run
       env:
-        SLACK_API: ${{ secrets.SLACK_API }}
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         API_ID: ${{ secrets.API_ID }} 
         API_PW: ${{ secrets.API_PW }} 
       run: |
