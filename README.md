@@ -7,7 +7,7 @@
     ![image](https://user-images.githubusercontent.com/68285620/138581586-aee85edc-3557-4005-a647-9d367672167c.png)
 
 ### BUILT WITH
-<img src="https://img.shields.io/badge/Python-0277bd?style=flat-square&logo=python&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Python-3671a1?style=flat-square&logo=python&logoColor=white"/></a>
 
 ### USING WITH
 <img src="https://img.shields.io/badge/Gitub Actions-000000?style=flat-square&logo=github&logoColor=white"/></a>
